@@ -33,7 +33,6 @@ app.use('/api/change-password', changePasswordRouter);
 app.use('/api/comment', commentRoute);
 app.use('/api/friends', friendRoute);
 
-
 //for local test, change the URL after deploy to backend application
 app.listen(PORT, () => {
     console.log(`Server running on https://grinddaily.onrender.com:${PORT}`);

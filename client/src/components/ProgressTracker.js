@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/progresstracker.css';
 
 const ProgressTracker = ({ tasks = {} }) => {
@@ -46,7 +46,7 @@ const ProgressTracker = ({ tasks = {} }) => {
 
     return (
         <div className="progresstracker-container">
-            <h3 className="lg:text-7xl pixelify-sans second-header-text-gradient animate__animated animate__flipInX">Grind Progress</h3>
+            <h3 className="progresstracker-h3">Grind Progress</h3>
             {["low", "moderate", "high"].map(priority => (
                 <div key={priority} className="progresstracker-content">
                     <h4 className={`priority-title priority-${priority}`}>

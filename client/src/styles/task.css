@@ -188,13 +188,12 @@
  .insert-task{
     color: black;
  }
- .min-h-screen {
+ .min-h-screen-a {
     min-height: 100vh; 
     height: auto; 
     display: flex;
     flex-direction: column; 
     align-items: center;
-    background-color: #25262E; 
 }
 
 .progression-bar {

@@ -75,8 +75,6 @@ function Progress () {
         );
     }
 
-
-
     return (
         <div className="p-8 mt-8 text-gray-300 min-h-full">
             <div className="bg-neutral-800 p-6 rounded-md shadow-md mb-6 flex items-center gap-4">

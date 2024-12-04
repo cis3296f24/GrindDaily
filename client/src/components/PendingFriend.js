@@ -65,16 +65,17 @@ function PendingFriend() {
     }
 
     return (
-        <div className="min-h-screen p-4">
-            <h2 className="text-2xl font-bold mb-4">Pending Friend Requests</h2>
+        <div className="min-h-screen p-4 text-gray-300">
+            <h1 className="text-3xl font-bold border-blue-600 border-l-4 mb-4 mt-8 text-left w-full px-4"> Friend List </h1>
+            <div className="border-t-2 w-11/13 border-gray-500"></div>
             {pendingRequests.length === 0 ? (
-                <p>No pending friend requests</p>
+                <p className="text-gray-500 mt-4">No pending friend requests</p>
             ) : (
-                <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-4 mt-4">
                     {pendingRequests.map((request) => (
                         <div
                             key={request.id}
-                            className="flex items-center justify-between p-4 bg-gray-800 rounded-lg shadow-md"
+                            className="flex items-center justify-between p-4 bg-neutral-700 rounded-lg shadow-md"
                         >
                             <div className="flex items-center gap-4">
                                 <img

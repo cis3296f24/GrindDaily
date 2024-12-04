@@ -1,16 +1,21 @@
 import EastIcon from '@mui/icons-material/East';
 import 'animate.css';
 import Lottie from "lottie-react";
-import React from 'react';
+import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import chatBox from '../assets/chatBox.svg';
 import hand from '../assets/hand.json';
 import motivate from '../assets/motivate.json';
 import Bar from './helper/Bar';
 import GithubProfile from './helper/GithubProfile';
-
+import { AuthContext } from './helper/auth';
 
 function Home() {
+
+    //check user logged in or not
+    const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
+    const userId = localStorage.getItem('userId');
+
     return (
         <div className="home flex flex-col justify-center items-center">
             <div className="my-20 mx-3 text-center">
@@ -24,7 +29,7 @@ function Home() {
 
             <div className="grid grid-cols-1 gap-6 mt-12 mb-10 text-lg text-gray-400 w-10/12 h-auto sm:grid-cols-3">
                 <NavLink
-                    to="/task"
+                    to="/challenge"
                     className="relative bg-slate-300 p-8 h-96 w-full text-center text-xl font-semibold text-gray-800 rounded-lg shadow-lg hover:bg-slate-400 hover:scale-105 transition duration-500 flex flex-col justify-between items-center"
                 >
                     Daily Challenges
@@ -37,7 +42,7 @@ function Home() {
                 </NavLink>
 
                 <NavLink
-                    to="/progresstracker"
+                    to={isLoggedIn ? `/progress/${userId}` : "/login"}
                     className="relative bg-slate-300 p-8 h-96 w-full text-center text-xl font-semibold text-gray-800 rounded-lg shadow-lg hover:bg-slate-400 hover:scale-105 transition duration-500 flex flex-col justify-between items-center"
                 >
                     Progress Tracking
@@ -47,7 +52,7 @@ function Home() {
                     <EastIcon className="absolute bottom-4 right-4" />
                 </NavLink>
                 <NavLink
-                    to="/login"
+                    to={isLoggedIn ? `/friend` : "/login"}
                     className="relative bg-slate-300 p-8 h-96 w-full text-center text-xl font-semibold text-gray-800 rounded-lg shadow-lg hover:bg-slate-400 hover:scale-105 transition duration-500 flex flex-col justify-between items-center"
                 >
                     Community Support

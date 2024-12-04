@@ -97,17 +97,13 @@ function FriendList() {
                             FRIENDS
                     </h1>
                     <div className="border-t-2 w-full border-gray-500"></div>
-                    <div className="w-full flex justify-between items-center">
-                        <NavLink to="/challenge" className="text-sm text-blue-400 font-medium hover:underline">
-                            👈 Challenge
-                        </NavLink>
-                        <NavLink to="/pendingFriend" className="text-sm text-blue-400 font-medium hover:underline">
-                            Pending List 👉
-                        </NavLink>
-                    </div>
 
-                    <div className="w-full p-2 rounded-md bg-gradient-to-r from-violet-500 to-fuchsia-500 flex flex-col items-center h-11/12 my-8 animate__animated animate__tada">
-                        <h2 className="text-3xl font-bold my-8"> Add A Friend </h2>
+                    <NavLink to="/pendingFriend" className="w-full text-right text-sm text-blue-400 font-medium hover:underline">
+                        Pending List 👉
+                    </NavLink>
+
+                    <div className="w-full bg-transparent flex flex-col items-center h-11/12 my-8 animate__animated animate__fadeInDown">
+                        <h1 className="text-3xl border-blue-600 border-l-4 font-bold mb-4 mt-8 text-left w-full px-4"> Add A Friend </h1>
                         <div className="flex w-full justify-center gap-4 items-center">
                             <input
                                 onChange={(e) => setFriendId(e.target.value)}
@@ -125,7 +121,7 @@ function FriendList() {
                         <p className="mt-4 mb-2 text-gray-200">{message}</p>
                     </div>
 
-                    <h1 className="text-3xl font-bold mb-4 mt-8"> Friend List </h1>
+                    <h1 className="text-3xl font-bold border-blue-600 border-l-4 mb-4 mt-8 text-left w-full px-4"> Friend List </h1>
                     <div className="border-t-2 w-full border-gray-500"></div>
                     {friends.length === 0 ? (
                         <p className="mt-2 text-gray-500">No friends found</p>
